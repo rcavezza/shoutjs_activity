@@ -1,6 +1,6 @@
 const assert = require('assert')
 const Shouty = require('../../lib/shouty')
-const Coordinate = require('../../lib/coordinate')
+const Person = require('../../lib/person')
 
 const {defineSupportCode} = require('cucumber')
 
@@ -11,12 +11,12 @@ defineSupportCode(({Before, Given, When, Then}) => {
     shouty = new Shouty()
   })
 
-  Given('Lucy is at {int}, {int}', function (x, y) {
-    shouty.setLocation('Lucy', new Coordinate(x, y))
+  Given('Lucy is at {int}, {int} with volume {int}', function (x, y, vol) {
+    shouty.setLocation('Lucy', new Person(x, y, vol))
   })
 
-  Given('Sean is at {int}, {int}', function (x, y) {
-    shouty.setLocation('Sean', new Coordinate(x, y))
+  Given('Sean is at {int}, {int} with volume {int}', function (x, y, vol) {
+    shouty.setLocation('Sean', new Person(x, y, vol))
   })
 
   When('Sean shouts', function () {
