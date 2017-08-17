@@ -12,6 +12,16 @@ describe('Coordinate', () => {
     const a = new Coordinate(0, 0)
     const b = new Coordinate(1000, 0)
 
+    console.log(a);
+    console.log(b);
+
     assert.equal(a.distanceFrom(b), 1000)
+  })
+
+  it("should calculate the distance ", ()=>{
+  	const a = new Coordinate(0, 0)
+  	const b = new Coordinate(3, 4)
+
+  	assert.equal(a.distanceFrom(b), 5)
   })
 })
