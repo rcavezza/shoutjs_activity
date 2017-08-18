@@ -13,6 +13,7 @@
   "scripts": {
     "mocha": "mocha",
     "cucumber": "cucumber-js",
+    "start": "node server.js",
     "test": "npm run mocha; npm run cucumber --",
     "watch": "npm-watch"
   },
