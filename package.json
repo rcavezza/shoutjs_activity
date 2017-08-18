@@ -6,7 +6,10 @@
   "watch": {
     "mocha": "{lib,test}/**/*.js",
     "cucumber": {
-      "patterns": ["lib", "features"],
+      "patterns": [
+        "lib",
+        "features"
+      ],
       "extensions": "js,feature"
     }
   },
