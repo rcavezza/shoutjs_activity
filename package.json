@@ -16,6 +16,7 @@
   "scripts": {
     "mocha": "mocha",
     "cucumber": "cucumber-js",
+    "start": "node server.js",
     "test": "npm run mocha; npm run cucumber --",
     "watch": "npm-watch"
   },
@@ -38,5 +39,8 @@
     "esprima": "^3.1.3",
     "mocha": "^3.2.0",
     "npm-watch": "^0.1.8"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
   }
 }
