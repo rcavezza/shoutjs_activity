@@ -9,18 +9,16 @@ defineSupportCode(({Before, Given, When, Then}) => {
   let shouty
   Before(function() {
     shouty = new Shouty()
+    people = new Map()
   })
 
-  Given('Lucy is at {int}, {int} with volume {int}', function (x, y, vol) {
-    shouty.setLocation('Lucy', new Person(x, y, vol))
+  Given('{str} is at {int}, {int} with a volume of {int}', function (name, x, y, vol) {
+    people.set(name,new Person(name,vol,x,y))
+    shouty.setPerson(people.get(name))
   })
 
-  Given('Sean is at {int}, {int} with volume {int}', function (x, y, vol) {
-    shouty.setLocation('Sean', new Person(x, y, vol))
-  })
-
-  When('Sean shouts', function () {
-    shouty.shout('Sean', ARBITARY_MESSAGE)
+  When('{str} shouts', function (name) {
+    shouty.shout(people.get(name), ARBITARY_MESSAGE)
   })
 
   Then('Lucy should hear Sean', function () {
@@ -30,5 +28,4 @@ defineSupportCode(({Before, Given, When, Then}) => {
   Then('Lucy should hear nothing', function () {
     assert.equal(shouty.getMessagesHeardBy('Lucy').size, 0)
   })
-
 })
